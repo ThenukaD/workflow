@@ -21,6 +21,10 @@ jobs:
       working-directory: my-web-app
       run: npm run build
 
+    - name: Start
+      working-directory: my-web-app
+      run: npm start
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
