@@ -24,9 +24,9 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./my-web-app/build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: ./build
+        path: ./my-web-app/build
