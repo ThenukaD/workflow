@@ -11,7 +11,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - name: Change directory
-        run: cd workflow/myapp
+        run: cd /home/runner/work/workflow/myapp
       - name: use node.js
         uses: actions/setup-node@v3
       - run: npm install
