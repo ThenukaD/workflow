@@ -1,11 +1,12 @@
 name: build-test-deploy
-on: push
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: /home/runner/work/workflow/myapp
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
