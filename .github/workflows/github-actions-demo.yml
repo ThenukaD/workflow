@@ -13,7 +13,7 @@ jobs:
       - name: use node.js
         uses: actions/setup-node@v3
       - name: Change directory
-        run: cd myapp; npm install; npm run build
+        run: cd myapp; npm install; npm build
       #- run: npm install
       #- run: npm run build
   test:
