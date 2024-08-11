@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          My First web app using React..!!!
+          My First web app using React and GitHub Workflows..!!!
         </p>
         <a
           className="App-link"
