@@ -21,16 +21,9 @@ jobs:
       working-directory: my-web-app
       run: npm run build
 
-    - name: Install serve package
-      working-directory: my-web-app
-      run: npm install -g serve
-
-    - name: Install serve package
-      working-directory: my-web-app
-      run: serve -s build
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
+      working-directory: my-web-app
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
