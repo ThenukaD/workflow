@@ -1,26 +1,24 @@
-name: build-test-deploy
+name: Build and Deploy
+
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
 jobs:
   build:
+
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v3
-      - name: use node.js
-        uses: actions/setup-node@v3
-      - name: Change directory
-        run: cd myapp
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo
-        uses: actions/checkout@v3
-      - name: use node.js
-        uses: actions/setup-node@v3
-      - run: npm install
-      - run: npm test
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
