@@ -13,20 +13,20 @@ jobs:
     - uses: actions/setup-node@v4
 
     - name: Install dependencies
-      working-directory: my-web-app
+      working-directory: test-app
       run: npm install
 
     - name: Build
-      working-directory: my-web-app
+      working-directory: test-app
       run: npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./my-web-app/build
+        publish_dir: ./test-app/build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: ./my-web-app/build
+        path: ./test-app/build
